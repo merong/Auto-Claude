@@ -24,7 +24,7 @@ export function useXterm({ terminalId, onCommandEnter, onResize }: UseXtermOptio
       cursorBlink: true,
       cursorStyle: 'block',
       fontSize: 13,
-      fontFamily: 'var(--font-mono), "JetBrains Mono", Menlo, Monaco, "Courier New", monospace',
+      fontFamily: '"MesloLGS NF", var(--font-mono), "JetBrains Mono", Menlo, Monaco, "Courier New", monospace',
       lineHeight: 1.2,
       letterSpacing: 0,
       theme: {
