@@ -4,6 +4,48 @@
     "description": "Configure your Auto Claude environment in a few simple steps",
     "helpText": "This wizard will help you set up your environment in just a few steps. You can configure your Claude OAuth token, set up memory features, and create your first task."
   },
+  "common": {
+    "back": "Back",
+    "skip": "Skip",
+    "continue": "Continue",
+    "saving": "Saving...",
+    "saveAndContinue": "Save & Continue",
+    "cancel": "Cancel",
+    "add": "Add",
+    "getKeyFrom": "Get your key from"
+  },
+  "firstSpec": {
+    "title": "Create Your First Task",
+    "subtitle": "Describe what you want to build and let Auto Claude handle the rest",
+    "taskCreatorOpened": "Task Creator Opened",
+    "taskCreatorOpenedDesc": "Great! You can create your first task now or continue with the wizard. You can always create tasks later from the main dashboard.",
+    "tipsTitle": "Tips for Great Tasks",
+    "openTaskCreator": "Open Task Creator",
+    "continueHint": "You can continue with the wizard now or create more tasks.",
+    "skipHint": "You can skip this step and create tasks later from the dashboard.",
+    "tips": {
+      "beDescriptive": {
+        "title": "Be Descriptive",
+        "description": "Clearly describe what you want to build. Include requirements, constraints, and expected behavior."
+      },
+      "startSmall": {
+        "title": "Start Small",
+        "description": "Begin with a focused task like adding a feature or fixing a bug. Smaller tasks are easier to verify."
+      },
+      "includeContext": {
+        "title": "Include Context",
+        "description": "Mention relevant files, APIs, or patterns. The more context you provide, the better the results."
+      },
+      "letAIHelp": {
+        "title": "Let AI Help",
+        "description": "The AI can generate titles and classify tasks. Focus on describing what you want, not the details."
+      }
+    },
+    "example": {
+      "title": "Example Task Description:",
+      "content": "\"Add a dark mode toggle to the settings page. It should persist the user's preference in localStorage and apply the theme immediately without page reload. Use the existing color variables in styles/theme.css.\""
+    }
+  },
   "welcome": {
     "title": "Welcome to Auto Claude",
     "subtitle": "Build software autonomously with AI-powered agents",
@@ -29,12 +71,50 @@
     }
   },
   "oauth": {
-    "title": "Claude Authentication",
-    "description": "Connect your Claude account to enable AI features"
+    "title": "Configure Claude Authentication",
+    "subtitle": "Add your Claude accounts to enable AI features",
+    "description": "Connect your Claude account to enable AI features",
+    "infoText": "Add multiple Claude subscriptions to automatically switch between them when you hit rate limits.",
+    "noAccounts": "No accounts configured yet",
+    "default": "Default",
+    "active": "Active",
+    "authenticated": "Authenticated",
+    "needsAuth": "Needs Auth",
+    "authenticate": "Authenticate",
+    "setActive": "Set Active",
+    "hideTokenEntry": "Hide token entry",
+    "enterTokenManually": "Enter token manually",
+    "renameProfile": "Rename profile",
+    "deleteProfile": "Delete profile",
+    "manualTokenEntry": "Manual Token Entry",
+    "runSetupToken": "Run <code>claude setup-token</code> to get your token",
+    "emailOptional": "Email (optional, for display)",
+    "saveToken": "Save Token",
+    "accountPlaceholder": "Account name (e.g., Work, Personal)",
+    "successMessage": "You have at least one authenticated Claude account. You can continue to the next step."
   },
   "memory": {
     "title": "Memory",
-    "description": "Auto Claude Memory helps remember context across your coding sessions"
+    "subtitle": "Auto Claude Memory helps remember context across your coding sessions",
+    "description": "Auto Claude Memory helps remember context across your coding sessions",
+    "dbAutoCreate": "Database will be created automatically",
+    "dbAutoCreateDesc": "Memory uses an embedded database - no Docker required. It will be created when you first use memory features.",
+    "whatDoesMemoryDo": "What does Memory do?",
+    "memoryDescription": "Memory stores discoveries, patterns, and insights about your codebase so future sessions start with context already loaded.",
+    "memoryFeatures": {
+      "patterns": "Remembers patterns across sessions",
+      "understands": "Understands your codebase over time",
+      "offline": "Works offline - no cloud required"
+    },
+    "memoryDatabase": "Memory Database",
+    "storedIn": "Stored in ~/.auto-claude/memories/",
+    "embeddingProvider": "Embedding Provider (for semantic search)",
+    "selectEmbeddingModel": "Select Embedding Model",
+    "noEmbeddingHint": "No embedding provider? Memory still works with keyword search. Semantic search is an upgrade.",
+    "providers": {
+      "ollamaLocal": "Ollama (Local)",
+      "freeLocalEmbeddings": "Free, local embeddings"
+    }
   },
   "completion": {
     "title": "You're All Set!",
@@ -74,5 +154,94 @@
     "downloading": "Downloading...",
     "download": "Download",
     "selectModelHint": "Select an installed model for semantic search. Memory works with keyword search even without embeddings."
+  },
+  "graphiti": {
+    "title": "Memory & Context",
+    "subtitle": "Enable Graphiti for persistent memory across coding sessions",
+    "configuredSuccess": "Graphiti configured successfully",
+    "configuredSuccessDesc": "Memory features are enabled. Auto Claude will maintain context across sessions for improved code understanding.",
+    "reconfigure": "Reconfigure Graphiti settings",
+    "dbAutoCreate": "Database will be created automatically",
+    "dbAutoCreateDesc": "LadybugDB uses an embedded database - no Docker required. The database will be created when you first use memory features.",
+    "whatIsGraphiti": "What is Graphiti?",
+    "graphitiDesc": "Graphiti is an intelligent memory layer that helps Auto Claude remember context across sessions. It uses a knowledge graph to store discoveries, patterns, and insights about your codebase.",
+    "features": {
+      "persistent": "Persistent memory across coding sessions",
+      "understanding": "Better understanding of your codebase over time",
+      "noRepeat": "Reduces repetitive explanations",
+      "noDocker": "No Docker required - uses embedded database"
+    },
+    "learnMore": "Learn more about Graphiti",
+    "enableGraphiti": "Enable Graphiti Memory",
+    "enableGraphitiDesc": "Uses LadybugDB (embedded) and an LLM/embedding provider",
+    "databaseName": "Database Name",
+    "storedIn": "Stored in ~/.auto-claude/graphs/",
+    "ready": "Ready",
+    "issue": "Issue",
+    "llmProvider": "LLM Provider",
+    "embeddingProvider": "Embedding Provider",
+    "testConnection": "Test Connection",
+    "testingConnection": "Testing connection...",
+    "allValidated": "All connections validated successfully!",
+    "apiKeyNote": "Note: API key validation currently only fully supports OpenAI. Your key will be saved and used at runtime.",
+    "ollamaNote": "Note: Ollama connection will be tested by checking if the server is reachable.",
+    "providers": {
+      "openai": {
+        "name": "OpenAI",
+        "llmDesc": "GPT models (recommended)",
+        "embeddingDesc": "text-embedding-3-small (recommended)"
+      },
+      "anthropic": {
+        "name": "Anthropic",
+        "desc": "Claude models"
+      },
+      "google": {
+        "name": "Google AI",
+        "llmDesc": "Gemini models",
+        "embeddingDesc": "Gemini text-embedding-004"
+      },
+      "groq": {
+        "name": "Groq",
+        "desc": "Llama models (fast inference)"
+      },
+      "openrouter": {
+        "name": "OpenRouter",
+        "desc": "Multi-provider aggregator",
+        "embeddingDesc": "OpenAI-compatible embeddings"
+      },
+      "azure": {
+        "name": "Azure OpenAI",
+        "desc": "Enterprise Azure deployment",
+        "embeddingDesc": "Enterprise Azure embeddings",
+        "settings": "Azure OpenAI Settings",
+        "apiKey": "API Key",
+        "baseUrl": "Base URL",
+        "llmDeployment": "LLM Deployment Name",
+        "embeddingDeployment": "Embedding Deployment Name"
+      },
+      "ollama": {
+        "name": "Ollama",
+        "llmDesc": "Local models (free)",
+        "embeddingDesc": "Local embeddings (free)",
+        "settings": "Ollama Settings (Local)",
+        "baseUrl": "Base URL",
+        "llmModel": "LLM Model",
+        "embeddingModel": "Embedding Model",
+        "embeddingDim": "Embedding Dimension",
+        "ensureRunning": "Ensure Ollama is running locally. See"
+      },
+      "voyage": {
+        "name": "Voyage AI",
+        "desc": "voyage-3 (great with Anthropic)"
+      }
+    },
+    "apiKeys": {
+      "openai": "OpenAI API Key",
+      "anthropic": "Anthropic API Key",
+      "google": "Google API Key",
+      "groq": "Groq API Key",
+      "openrouter": "OpenRouter API Key",
+      "voyage": "Voyage API Key"
+    }
   }
 }

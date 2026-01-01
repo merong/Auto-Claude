@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Brain,
   Database,
@@ -72,6 +73,7 @@ interface MemoryConfig {
  * - Keyword search works as fallback without embeddings
  */
 export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
+  const { t } = useTranslation('onboarding');
   const { settings, updateSettings } = useSettingsStore();
   const [config, setConfig] = useState<MemoryConfig>({
     database: 'auto_claude_memory',
@@ -194,7 +196,7 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
         <div className="space-y-4">
           <div className="space-y-2">
             <Label className="text-sm font-medium text-foreground">
-              Select Embedding Model
+              {t('memory.selectEmbeddingModel')}
             </Label>
             <OllamaModelSelector
               selectedModel={config.ollamaEmbeddingModel}
@@ -375,10 +377,10 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
             </div>
           </div>
           <h1 className="text-2xl font-bold text-foreground tracking-tight">
-            Memory
+            {t('memory.title')}
           </h1>
           <p className="mt-2 text-muted-foreground">
-            Auto Claude Memory helps remember context across your coding sessions
+            {t('memory.subtitle')}
           </p>
         </div>
 
@@ -412,11 +414,10 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
                     <Info className="h-5 w-5 text-info shrink-0 mt-0.5" />
                     <div className="flex-1">
                       <p className="text-sm font-medium text-info">
-                        Database will be created automatically
+                        {t('memory.dbAutoCreate')}
                       </p>
                       <p className="text-sm text-info/80 mt-1">
-                        Memory uses an embedded database - no Docker required.
-                        It will be created when you first use memory features.
+                        {t('memory.dbAutoCreateDesc')}
                       </p>
                     </div>
                   </div>
@@ -431,16 +432,15 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
                   <Info className="h-5 w-5 text-info shrink-0 mt-0.5" />
                   <div className="flex-1 space-y-3">
                     <p className="text-sm font-medium text-foreground">
-                      What does Memory do?
+                      {t('memory.whatDoesMemoryDo')}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      Memory stores discoveries, patterns, and insights about your codebase
-                      so future sessions start with context already loaded.
+                      {t('memory.memoryDescription')}
                     </p>
                     <ul className="text-sm text-muted-foreground space-y-1.5 list-disc list-inside">
-                      <li>Remembers patterns across sessions</li>
-                      <li>Understands your codebase over time</li>
-                      <li>Works offline - no cloud required</li>
+                      <li>{t('memory.memoryFeatures.patterns')}</li>
+                      <li>{t('memory.memoryFeatures.understands')}</li>
+                      <li>{t('memory.memoryFeatures.offline')}</li>
                     </ul>
                   </div>
                 </div>
@@ -452,10 +452,10 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
               <Database className="h-5 w-5 text-muted-foreground" />
               <div>
                 <p className="text-sm font-medium text-foreground">
-                  Memory Database
+                  {t('memory.memoryDatabase')}
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Stored in ~/.auto-claude/memories/
+                  {t('memory.storedIn')}
                 </p>
               </div>
               {kuzuAvailable && (
@@ -467,7 +467,7 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label className="text-sm font-medium text-foreground">
-                  Embedding Provider (for semantic search)
+                  {t('memory.embeddingProvider')}
                 </Label>
                 <Select
                   value={config.embeddingProvider}
@@ -498,7 +498,7 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
 
             {/* Fallback info */}
             <p className="text-xs text-muted-foreground text-center">
-              No embedding provider? Memory still works with keyword search. Semantic search is an upgrade.
+              {t('memory.noEmbeddingHint')}
             </p>
           </div>
         )}
@@ -510,7 +510,7 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
             onClick={onBack}
             className="text-muted-foreground hover:text-foreground"
           >
-            Back
+            {t('common.back')}
           </Button>
           <Button
             onClick={handleContinue}
@@ -519,10 +519,10 @@ export function MemoryStep({ onNext, onBack }: MemoryStepProps) {
             {isSaving ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                Saving...
+                {t('common.saving')}
               </>
             ) : (
-              'Save & Continue'
+              t('common.saveAndContinue')
             )}
           </Button>
         </div>
