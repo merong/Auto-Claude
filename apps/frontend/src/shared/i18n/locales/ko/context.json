@@ -1,0 +1,58 @@
+{
+  "tabs": {
+    "projectIndex": "프로젝트 인덱스",
+    "memories": "메모리"
+  },
+  "memories": {
+    "title": "그래프 메모리 상태",
+    "connected": "연결됨",
+    "notAvailable": "사용 불가",
+    "database": "데이터베이스",
+    "path": "경로",
+    "episodes": "에피소드",
+    "lastSession": "마지막 세션: #{{session}}",
+    "notConfigured": "Graphiti 메모리가 설정되지 않았습니다",
+    "enableInstructions": "그래프 메모리를 활성화하려면 프로젝트 설정에서 <code>GRAPHITI_ENABLED=true</code>를 설정하세요.",
+    "searchTitle": "메모리 검색",
+    "searchPlaceholder": "패턴, 인사이트, 주의사항 검색...",
+    "resultsFound": "{{count}}개 결과 발견",
+    "resultsFound_other": "{{count}}개 결과 발견",
+    "score": "점수:",
+    "recentTitle": "최근 메모리",
+    "noMemories": "아직 기록된 메모리가 없습니다. 메모리는 AI 에이전트 세션 중에 생성됩니다."
+  },
+  "service": {
+    "testing": "테스트: {{value}}",
+    "orm": "ORM: {{value}}",
+    "port": "포트: {{value}}",
+    "styling": "스타일링: {{value}}",
+    "state": "상태: {{value}}",
+    "keyDirectories": "주요 디렉토리"
+  },
+  "index": {
+    "title": "프로젝트 구조",
+    "description": "AI가 발견한 코드베이스 정보",
+    "refresh": "새로고침",
+    "refreshTooltip": "프로젝트 구조 재분석",
+    "loadFailed": "프로젝트 인덱스 로드 실패",
+    "noIndexTitle": "프로젝트 인덱스 없음",
+    "noIndexDescription": "새로고침 버튼을 클릭하여 프로젝트 구조를 분석하고 인덱스를 생성하세요.",
+    "analyzeProject": "프로젝트 분석",
+    "overview": "개요",
+    "serviceCount": "{{count}}개 서비스",
+    "serviceCount_other": "{{count}}개 서비스",
+    "services": "서비스",
+    "infrastructure": "인프라",
+    "dockerCompose": "Docker Compose",
+    "cicd": "CI/CD",
+    "deployment": "배포",
+    "dockerServices": "Docker 서비스",
+    "conventions": "컨벤션",
+    "pythonLinting": "Python 린팅",
+    "jsLinting": "JS 린팅",
+    "formatting": "포맷팅",
+    "gitHooks": "Git Hooks",
+    "typescript": "TypeScript",
+    "enabled": "활성화됨"
+  }
+}

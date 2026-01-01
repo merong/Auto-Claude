@@ -1,0 +1,118 @@
+{
+  "status": {
+    "backlog": "백로그",
+    "todo": "할 일",
+    "in_progress": "진행 중",
+    "review": "검토",
+    "complete": "완료",
+    "archived": "보관됨"
+  },
+  "actions": {
+    "start": "시작",
+    "stop": "중지",
+    "recover": "복구",
+    "resume": "재개",
+    "archive": "보관",
+    "delete": "삭제",
+    "view": "상세 보기"
+  },
+  "labels": {
+    "running": "실행 중",
+    "aiReview": "AI 검토",
+    "needsReview": "검토 필요",
+    "pending": "대기 중",
+    "stuck": "중단됨",
+    "incomplete": "미완료",
+    "recovering": "복구 중...",
+    "needsRecovery": "복구 필요",
+    "needsResume": "재개 필요"
+  },
+  "reviewReason": {
+    "completed": "완료됨",
+    "hasErrors": "오류 있음",
+    "qaIssues": "QA 이슈",
+    "approvePlan": "계획 승인"
+  },
+  "tooltips": {
+    "archiveTask": "작업 보관",
+    "archiveAllDone": "완료된 모든 작업 보관"
+  },
+  "creation": {
+    "title": "새 작업 만들기",
+    "description": "만들고 싶은 것을 설명하세요",
+    "placeholder": "작업을 설명하세요..."
+  },
+  "empty": {
+    "title": "아직 작업이 없습니다",
+    "description": "시작하려면 첫 번째 작업을 만드세요"
+  },
+  "kanban": {
+    "emptyBacklog": "계획된 작업 없음",
+    "emptyBacklogHint": "작업을 추가하여 시작하세요",
+    "emptyInProgress": "실행 중인 작업 없음",
+    "emptyInProgressHint": "백로그에서 작업을 시작하세요",
+    "emptyAiReview": "검토 중인 작업 없음",
+    "emptyAiReviewHint": "AI가 완료된 작업을 검토합니다",
+    "emptyHumanReview": "검토할 항목 없음",
+    "emptyHumanReviewHint": "승인 대기 중인 작업이 여기에 표시됩니다",
+    "emptyDone": "완료된 작업 없음",
+    "emptyDoneHint": "승인된 작업이 여기에 표시됩니다",
+    "emptyDefault": "작업 없음",
+    "dropHere": "여기에 놓기",
+    "showArchived": "보관된 항목 보기"
+  },
+  "execution": {
+    "phases": {
+      "idle": "대기",
+      "planning": "계획 중",
+      "coding": "코딩 중",
+      "reviewing": "검토 중",
+      "fixing": "수정 중",
+      "complete": "완료",
+      "failed": "실패"
+    },
+    "labels": {
+      "interrupted": "중단됨",
+      "progress": "진행률",
+      "entry": "항목",
+      "entries": "항목"
+    },
+    "shortPhases": {
+      "plan": "계획",
+      "code": "코드",
+      "qa": "QA"
+    }
+  },
+  "workspaceStatus": {
+    "buildReady": "빌드 검토 준비 완료",
+    "view": "보기",
+    "files": "파일",
+    "commits": "커밋",
+    "uncommittedChanges": "메인 프로젝트에 {{count}}개의 커밋되지 않은 변경 사항",
+    "uncommittedChanges_other": "메인 프로젝트에 {{count}}개의 커밋되지 않은 변경 사항",
+    "uncommittedHint": "충돌을 피하려면 스테이징 전에 커밋하거나 스태시하세요.",
+    "openTerminal": "터미널 열기",
+    "opening": "열는 중...",
+    "checkingConflicts": "충돌 확인 중...",
+    "branchDiverged": "브랜치 분기됨",
+    "aiWillResolve": "AI가 해결합니다",
+    "readyToMerge": "병합 준비 완료",
+    "conflictCount": "{{count}}개 충돌",
+    "conflictCount_other": "{{count}}개 충돌",
+    "details": "상세 정보",
+    "refresh": "새로고침",
+    "newCommits": "메인 브랜치에 {{count}}개의 새 커밋이 있습니다.",
+    "newCommits_other": "메인 브랜치에 {{count}}개의 새 커밋이 있습니다.",
+    "filesNeedMerging": "{{count}}개 파일을 병합해야 합니다.",
+    "filesNeedMerging_other": "{{count}}개 파일을 병합해야 합니다.",
+    "stageOnly": "스테이징만 (커밋 전 IDE에서 검토)",
+    "resolving": "해결 중...",
+    "staging": "스테이징 중...",
+    "merging": "병합 중...",
+    "stageWithAIMerge": "AI 병합으로 스테이지",
+    "mergeWithAI": "AI로 병합",
+    "stageChanges": "변경 사항 스테이지",
+    "mergeToMain": "메인에 병합",
+    "discardBuild": "빌드 폐기"
+  }
+}

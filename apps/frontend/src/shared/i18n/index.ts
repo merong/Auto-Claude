@@ -9,6 +9,9 @@ import enTasks from './locales/en/tasks.json';
 import enWelcome from './locales/en/welcome.json';
 import enOnboarding from './locales/en/onboarding.json';
 import enDialogs from './locales/en/dialogs.json';
+import enChangelog from './locales/en/changelog.json';
+import enContext from './locales/en/context.json';
+import enIdeation from './locales/en/ideation.json';
 
 // Import French translation resources
 import frCommon from './locales/fr/common.json';
@@ -18,6 +21,18 @@ import frTasks from './locales/fr/tasks.json';
 import frWelcome from './locales/fr/welcome.json';
 import frOnboarding from './locales/fr/onboarding.json';
 import frDialogs from './locales/fr/dialogs.json';
+
+// Import Korean translation resources
+import koCommon from './locales/ko/common.json';
+import koNavigation from './locales/ko/navigation.json';
+import koSettings from './locales/ko/settings.json';
+import koTasks from './locales/ko/tasks.json';
+import koWelcome from './locales/ko/welcome.json';
+import koOnboarding from './locales/ko/onboarding.json';
+import koDialogs from './locales/ko/dialogs.json';
+import koChangelog from './locales/ko/changelog.json';
+import koContext from './locales/ko/context.json';
+import koIdeation from './locales/ko/ideation.json';
 
 export const defaultNS = 'common';
 
@@ -29,7 +44,10 @@ export const resources = {
     tasks: enTasks,
     welcome: enWelcome,
     onboarding: enOnboarding,
-    dialogs: enDialogs
+    dialogs: enDialogs,
+    changelog: enChangelog,
+    context: enContext,
+    ideation: enIdeation
   },
   fr: {
     common: frCommon,
@@ -39,6 +57,18 @@ export const resources = {
     welcome: frWelcome,
     onboarding: frOnboarding,
     dialogs: frDialogs
+  },
+  ko: {
+    common: koCommon,
+    navigation: koNavigation,
+    settings: koSettings,
+    tasks: koTasks,
+    welcome: koWelcome,
+    onboarding: koOnboarding,
+    dialogs: koDialogs,
+    changelog: koChangelog,
+    context: koContext,
+    ideation: koIdeation
   }
 } as const;
 
@@ -46,10 +76,10 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en', // Default language (will be overridden by settings)
+    lng: 'ko', // Default language (will be overridden by settings)
     fallbackLng: 'en',
     defaultNS,
-    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs'],
+    ns: ['common', 'navigation', 'settings', 'tasks', 'welcome', 'onboarding', 'dialogs', 'changelog', 'context', 'ideation'],
     interpolation: {
       escapeValue: false // React already escapes values
     },

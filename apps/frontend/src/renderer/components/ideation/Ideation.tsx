@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { TabsContent } from '../ui/tabs';
 import { EnvConfigModal } from '../EnvConfigModal';
 import { IDEATION_TYPE_DESCRIPTIONS } from '../../../shared/constants';
@@ -17,6 +18,7 @@ interface IdeationProps {
 }
 
 export function Ideation({ projectId, onGoToTask }: IdeationProps) {
+  const { t } = useTranslation('ideation');
   const {
     session,
     generationStatus,
@@ -115,8 +117,8 @@ export function Ideation({ projectId, onGoToTask }: IdeationProps) {
           open={showEnvConfigModal}
           onOpenChange={setShowEnvConfigModal}
           onConfigured={handleEnvConfigured}
-          title="Claude Authentication Required"
-          description="A Claude Code OAuth token is required to generate AI-powered feature ideas."
+          title={t('auth.title')}
+          description={t('auth.description')}
           projectId={projectId}
         />
       </>
@@ -168,7 +170,7 @@ export function Ideation({ projectId, onGoToTask }: IdeationProps) {
               ))}
               {activeIdeas.length === 0 && (
                 <div className="text-center py-8 text-muted-foreground">
-                  No ideas to display
+                  {t('content.noIdeas')}
                 </div>
               )}
             </div>
@@ -239,8 +241,8 @@ export function Ideation({ projectId, onGoToTask }: IdeationProps) {
         open={showEnvConfigModal}
         onOpenChange={setShowEnvConfigModal}
         onConfigured={handleEnvConfigured}
-        title="Claude Authentication Required"
-        description="A Claude Code OAuth token is required to generate AI-powered feature ideas."
+        title={t('auth.title')}
+        description={t('auth.description')}
         projectId={projectId}
       />
     </div>

@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useProjectStore } from '../stores/project-store';
 import { useTaskStore } from '../stores/task-store';
 import { useGitHubIssues, useGitHubInvestigation, useIssueFiltering } from './github-issues/hooks';
@@ -14,6 +15,7 @@ import type { GitHubIssue } from '../../shared/types';
 import type { GitHubIssuesProps } from './github-issues/types';
 
 export function GitHubIssues({ onOpenSettings, onNavigateToTask }: GitHubIssuesProps) {
+  const { t } = useTranslation('settings');
   const projects = useProjectStore((state) => state.projects);
   const selectedProjectId = useProjectStore((state) => state.selectedProjectId);
   const selectedProject = projects.find((p) => p.id === selectedProjectId);
@@ -127,7 +129,7 @@ export function GitHubIssues({ onOpenSettings, onNavigateToTask }: GitHubIssuesP
               onViewTask={onNavigateToTask}
             />
           ) : (
-            <EmptyState message="Select an issue to view details" />
+            <EmptyState message={t('github.selectIssueToView')} />
           )}
         </div>
       </div>

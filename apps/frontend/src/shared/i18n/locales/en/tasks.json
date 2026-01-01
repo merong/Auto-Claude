@@ -82,5 +82,37 @@
       "code": "Code",
       "qa": "QA"
     }
+  },
+  "workspaceStatus": {
+    "buildReady": "Build Ready for Review",
+    "view": "View",
+    "files": "files",
+    "commits": "commits",
+    "uncommittedChanges": "{{count}} uncommitted change in main project",
+    "uncommittedChanges_other": "{{count}} uncommitted changes in main project",
+    "uncommittedHint": "Commit or stash them before staging to avoid conflicts.",
+    "openTerminal": "Open Terminal",
+    "opening": "Opening...",
+    "checkingConflicts": "Checking for conflicts...",
+    "branchDiverged": "Branch Diverged",
+    "aiWillResolve": "AI will resolve",
+    "readyToMerge": "Ready to merge",
+    "conflictCount": "{{count}} conflict",
+    "conflictCount_other": "{{count}} conflicts",
+    "details": "Details",
+    "refresh": "Refresh",
+    "newCommits": "Main branch has {{count}} new commit.",
+    "newCommits_other": "Main branch has {{count}} new commits.",
+    "filesNeedMerging": "{{count}} file needs merging.",
+    "filesNeedMerging_other": "{{count}} files need merging.",
+    "stageOnly": "Stage only (review in IDE before committing)",
+    "resolving": "Resolving...",
+    "staging": "Staging...",
+    "merging": "Merging...",
+    "stageWithAIMerge": "Stage with AI Merge",
+    "mergeWithAI": "Merge with AI",
+    "stageChanges": "Stage Changes",
+    "mergeToMain": "Merge to Main",
+    "discardBuild": "Discard build"
   }
 }

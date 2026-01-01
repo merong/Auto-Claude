@@ -88,5 +88,118 @@
       "titleGenerator": "Title Generator",
       "claude": "Claude"
     }
+  },
+  "fileExplorer": {
+    "title": "Project Files",
+    "refresh": "Refresh",
+    "dragHint": "Drag files into a terminal to insert the path",
+    "dragHintRef": "Drag files to add as references"
+  },
+  "terminal": {
+    "title": "Agent Terminals",
+    "description": "Spawn multiple terminals to run Claude agents in parallel.",
+    "newTerminal": "New Terminal",
+    "count": "{{count}} / 12 terminals",
+    "history": "History",
+    "restoreFrom": "Restore sessions from...",
+    "sessionCount": "{{count}} session",
+    "sessionCount_other": "{{count}} sessions",
+    "invokeClaudeAll": "Invoke Claude All",
+    "files": "Files"
+  },
+  "appUpdate": {
+    "title": "App Update Available",
+    "description": "A new version of Auto Claude is ready to download",
+    "newVersion": "New Version",
+    "released": "Released {{date}}",
+    "downloading": "Downloading...",
+    "downloadSuccess": "Update downloaded successfully! Click Install to restart and apply the update.",
+    "installLater": "Install Later",
+    "remindLater": "Remind Me Later",
+    "installRestart": "Install and Restart",
+    "downloadUpdate": "Download Update",
+    "downloadFailed": "Failed to download update"
+  },
+  "sdkRateLimit": {
+    "title": "Claude Code Rate Limit",
+    "interrupted": "{{source}} was interrupted due to usage limits.",
+    "profile": "Profile: {{name}}",
+    "proactiveSwap": "Proactive Swap",
+    "reactiveSwap": "Reactive Swap",
+    "proactiveSwapDesc": "Automatically switched from {{from}} to {{to}} before hitting rate limit.",
+    "reactiveSwapDesc": "Rate limit hit on {{from}}. Automatically switched to {{to}} and restarted.",
+    "noInterruption": "Your work continued without interruption.",
+    "rateLimitReached": "Rate limit reached",
+    "operationStopped": "The operation was stopped because {{account}} reached its usage limit.",
+    "switchToContinue": "Switch to another account below to continue.",
+    "addAccountToContinue": "Add another Claude account to continue working.",
+    "upgradePro": "Upgrade to Pro for Higher Limits",
+    "resets": "Resets {{time}}",
+    "weeklyLimit": "Weekly limit - resets in about a week",
+    "sessionLimit": "Session limit - resets in a few hours",
+    "switchRetry": "Switch Account & Retry",
+    "useAnother": "Use Another Account",
+    "recommendedAccount": "Recommended: {{name}} has more capacity available.",
+    "switchAndRetry": "Switch to another Claude account and retry the operation:",
+    "selectAccount": "Select account...",
+    "retrying": "Retrying...",
+    "retry": "Retry",
+    "addNewAccount": "Add new account...",
+    "addAnotherSubscription": "Add another Claude subscription to automatically switch when you hit rate limits.",
+    "addAnotherAccount": "Add another account:",
+    "connectAccount": "Connect a Claude account:",
+    "accountPlaceholder": "Account name (e.g., Work, Personal)",
+    "willOpenLogin": "This will open Claude login to authenticate the new account.",
+    "autoSwitchRetry": "Auto-switch & retry on rate limit",
+    "upgradeTitle": "Upgrade for more usage",
+    "upgradeDesc": "Upgrade your Claude subscription for higher usage limits.",
+    "upgradeSubscription": "Upgrade Subscription",
+    "whatHappened": "What happened:",
+    "operationStoppedDesc": "The {{operation}} operation was stopped because your Claude account ({{account}}) reached its usage limit.",
+    "switchOrAdd": "You can switch to another account and retry, or add more accounts above.",
+    "addOrWait": "Add another Claude account above to continue working, or wait for the limit to reset.",
+    "sources": {
+      "changelog": "Changelog Generation",
+      "task": "Task Execution",
+      "roadmap": "Roadmap Generation",
+      "ideation": "Ideation",
+      "titleGenerator": "Title Generation",
+      "default": "Claude Operation"
+    }
+  },
+  "worktrees": {
+    "title": "Worktrees",
+    "description": "Manage isolated workspaces for your Auto Claude tasks",
+    "selectProject": "Select a project to view worktrees",
+    "noWorktrees": "No Worktrees",
+    "noWorktreesDesc": "Worktrees are created automatically when Auto Claude builds features. They provide isolated workspaces for each task.",
+    "filesChanged": "{{count}} files changed",
+    "commitsAhead": "{{count}} commits ahead",
+    "mergeTo": "Merge to {{branch}}",
+    "copyPath": "Copy Path",
+    "mergeDialog": {
+      "title": "Merge Worktree",
+      "description": "Merge changes from this worktree into the base branch.",
+      "sourceBranch": "Source Branch",
+      "targetBranch": "Target Branch",
+      "changes": "Changes",
+      "changesDetail": "{{commits}} commits, {{files}} files",
+      "merging": "Merging...",
+      "success": "Merge Successful",
+      "failed": "Merge Failed",
+      "conflictFiles": "Conflicting files:"
+    },
+    "deleteDialog": {
+      "title": "Delete Worktree?",
+      "description": "This will permanently delete the worktree and all uncommitted changes.",
+      "cannotUndo": "This action cannot be undone.",
+      "deleting": "Deleting..."
+    },
+    "errors": {
+      "loadFailed": "Failed to load worktrees",
+      "taskNotFound": "Task not found for this worktree",
+      "deleteFailed": "Failed to delete worktree",
+      "mergeFailed": "Merge failed"
+    }
   }
 }

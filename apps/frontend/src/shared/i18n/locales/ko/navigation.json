@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "project": "프로젝트",
+    "tools": "도구"
+  },
+  "items": {
+    "kanban": "칸반 보드",
+    "terminals": "에이전트 터미널",
+    "insights": "인사이트",
+    "roadmap": "로드맵",
+    "ideation": "아이디어",
+    "changelog": "변경 로그",
+    "context": "컨텍스트",
+    "githubIssues": "GitHub 이슈",
+    "gitlabIssues": "GitLab 이슈",
+    "worktrees": "워크트리"
+  },
+  "actions": {
+    "settings": "설정",
+    "help": "도움말 및 피드백",
+    "newTask": "새 작업"
+  },
+  "tooltips": {
+    "settings": "애플리케이션 설정",
+    "help": "도움말 및 피드백"
+  },
+  "messages": {
+    "initializeToCreateTasks": "작업을 생성하려면 Auto Claude를 초기화하세요"
+  },
+  "githubIssuesPage": {
+    "title": "GitHub 이슈",
+    "openCount": "{{count}}개 열림",
+    "searchPlaceholder": "이슈 검색...",
+    "filterOpen": "열림",
+    "filterClosed": "닫힘",
+    "filterAll": "전체"
+  }
+}

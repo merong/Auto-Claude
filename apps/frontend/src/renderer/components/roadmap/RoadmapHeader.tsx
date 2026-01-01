@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Target, Users, BarChart3, RefreshCw, Plus, TrendingUp } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
@@ -7,6 +8,7 @@ import { ROADMAP_PRIORITY_COLORS } from '../../../shared/constants';
 import type { RoadmapHeaderProps } from './types';
 
 export function RoadmapHeader({ roadmap, competitorAnalysis, onAddFeature, onRefresh, onViewCompetitorAnalysis }: RoadmapHeaderProps) {
+  const { t } = useTranslation('ideation');
   const stats = getFeatureStats(roadmap);
 
   return (
@@ -26,15 +28,17 @@ export function RoadmapHeader({ roadmap, competitorAnalysis, onAddFeature, onRef
                     onClick={onViewCompetitorAnalysis}
                   >
                     <TrendingUp className="h-3 w-3" />
-                    Competitor Analysis
+                    {t('roadmap.competitorAnalysis')}
                   </Badge>
                 </TooltipTrigger>
                 <TooltipContent className="max-w-md">
                   <div className="space-y-2">
-                    <div className="font-semibold">Click to view detailed analysis</div>
+                    <div className="font-semibold">{t('roadmap.clickToView')}</div>
                     <div className="text-sm text-muted-foreground">
-                      Analyzed {competitorAnalysis.competitors.length} competitors with {' '}
-                      {competitorAnalysis.competitors.reduce((sum, c) => sum + c.painPoints.length, 0)} pain points identified
+                      {t('roadmap.analyzedCompetitors', {
+                        competitors: competitorAnalysis.competitors.length,
+                        painPoints: competitorAnalysis.competitors.reduce((sum, c) => sum + c.painPoints.length, 0)
+                      })}
                     </div>
                   </div>
                 </TooltipContent>
@@ -48,10 +52,10 @@ export function RoadmapHeader({ roadmap, competitorAnalysis, onAddFeature, onRef
             <TooltipTrigger asChild>
               <Button variant="outline" size="sm" onClick={onAddFeature}>
                 <Plus className="h-4 w-4 mr-1" />
-                Add Feature
+                {t('roadmap.addFeature')}
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Add a new feature to the roadmap</TooltipContent>
+            <TooltipContent>{t('roadmap.addFeatureTooltip')}</TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -59,7 +63,7 @@ export function RoadmapHeader({ roadmap, competitorAnalysis, onAddFeature, onRef
                 <RefreshCw className="h-4 w-4" />
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Regenerate Roadmap</TooltipContent>
+            <TooltipContent>{t('roadmap.regenerate')}</TooltipContent>
           </Tooltip>
         </div>
       </div>
@@ -69,19 +73,19 @@ export function RoadmapHeader({ roadmap, competitorAnalysis, onAddFeature, onRef
         <div className="mt-4 flex items-center gap-4 text-sm">
           <div className="flex items-center gap-2">
             <Users className="h-4 w-4 text-muted-foreground" />
-            <span className="text-muted-foreground">Target:</span>
+            <span className="text-muted-foreground">{t('roadmap.target')}</span>
             <span className="font-medium">{roadmap.targetAudience.primary}</span>
           </div>
           {roadmap.targetAudience.secondary?.length > 0 && (
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="text-muted-foreground cursor-help underline decoration-dotted">
-                  +{roadmap.targetAudience.secondary.length} more personas
+                  {t('roadmap.morePersonas', { count: roadmap.targetAudience.secondary.length })}
                 </div>
               </TooltipTrigger>
               <TooltipContent className="max-w-md">
                 <div className="space-y-1">
-                  <div className="font-semibold mb-2">Secondary Personas:</div>
+                  <div className="font-semibold mb-2">{t('roadmap.secondaryPersonas')}</div>
                   {roadmap.targetAudience.secondary.map((persona) => (
                     <div key={persona} className="text-sm">• {persona}</div>
                   ))}
@@ -97,14 +101,12 @@ export function RoadmapHeader({ roadmap, competitorAnalysis, onAddFeature, onRef
         <div className="flex items-center gap-2">
           <BarChart3 className="h-4 w-4 text-muted-foreground" />
           <span className="text-sm">
-            <span className="font-semibold">{stats.total}</span>
-            <span className="text-muted-foreground"> features</span>
+            {t('roadmap.featureCount', { count: stats.total })}
           </span>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-sm">
-            <span className="font-semibold">{roadmap.phases.length}</span>
-            <span className="text-muted-foreground"> phases</span>
+            {t('roadmap.phaseCount', { count: roadmap.phases.length })}
           </span>
         </div>
         <div className="flex items-center gap-1">

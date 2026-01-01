@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Settings2, Save, Loader2 } from 'lucide-react';
 import { LinearTaskImportModal } from './LinearTaskImportModal';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './ui/dialog';
@@ -31,6 +32,7 @@ interface ProjectSettingsProps {
 }
 
 export function ProjectSettings({ project, open, onOpenChange }: ProjectSettingsProps) {
+  const { t } = useTranslation('settings');
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isUpdating, setIsUpdating] = useState(false);
@@ -173,10 +175,10 @@ export function ProjectSettings({ project, open, onOpenChange }: ProjectSettings
         <DialogHeader className="shrink-0">
           <DialogTitle className="flex items-center gap-2 text-foreground">
             <Settings2 className="h-5 w-5" />
-            Project Settings
+            {t('projectSettings.title')}
           </DialogTitle>
           <DialogDescription>
-            Configure settings for {project.name}
+            {t('projectSettings.configureFor', { projectName: project.name })}
           </DialogDescription>
         </DialogHeader>
 
@@ -279,18 +281,18 @@ export function ProjectSettings({ project, open, onOpenChange }: ProjectSettings
 
         <DialogFooter className="shrink-0">
           <Button variant="outline" onClick={() => onOpenChange(false)}>
-            Cancel
+            {t('projectSettings.cancel')}
           </Button>
           <Button onClick={handleSave} disabled={isSaving || isSavingEnv}>
             {isSaving || isSavingEnv ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Saving...
+                {t('projectSettings.saving')}
               </>
             ) : (
               <>
                 <Save className="mr-2 h-4 w-4" />
-                Save Settings
+                {t('projectSettings.saveSettings')}
               </>
             )}
           </Button>

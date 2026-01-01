@@ -1,0 +1,58 @@
+{
+  "tabs": {
+    "projectIndex": "Project Index",
+    "memories": "Memories"
+  },
+  "memories": {
+    "title": "Graph Memory Status",
+    "connected": "Connected",
+    "notAvailable": "Not Available",
+    "database": "Database",
+    "path": "Path",
+    "episodes": "Episodes",
+    "lastSession": "Last session: #{{session}}",
+    "notConfigured": "Graphiti memory is not configured",
+    "enableInstructions": "To enable graph memory, set <code>GRAPHITI_ENABLED=true</code> in project settings.",
+    "searchTitle": "Search Memories",
+    "searchPlaceholder": "Search for patterns, insights, gotchas...",
+    "resultsFound": "{{count}} result found",
+    "resultsFound_other": "{{count}} results found",
+    "score": "Score:",
+    "recentTitle": "Recent Memories",
+    "noMemories": "No memories recorded yet. Memories are created during AI agent sessions."
+  },
+  "service": {
+    "testing": "Testing: {{value}}",
+    "orm": "ORM: {{value}}",
+    "port": "Port: {{value}}",
+    "styling": "Styling: {{value}}",
+    "state": "State: {{value}}",
+    "keyDirectories": "Key Directories"
+  },
+  "index": {
+    "title": "Project Structure",
+    "description": "AI-discovered knowledge about your codebase",
+    "refresh": "Refresh",
+    "refreshTooltip": "Re-analyze project structure",
+    "loadFailed": "Failed to load project index",
+    "noIndexTitle": "No Project Index Found",
+    "noIndexDescription": "Click the Refresh button to analyze your project structure and create an index.",
+    "analyzeProject": "Analyze Project",
+    "overview": "Overview",
+    "serviceCount": "{{count}} service",
+    "serviceCount_other": "{{count}} services",
+    "services": "Services",
+    "infrastructure": "Infrastructure",
+    "dockerCompose": "Docker Compose",
+    "cicd": "CI/CD",
+    "deployment": "Deployment",
+    "dockerServices": "Docker Services",
+    "conventions": "Conventions",
+    "pythonLinting": "Python Linting",
+    "jsLinting": "JS Linting",
+    "formatting": "Formatting",
+    "gitHooks": "Git Hooks",
+    "typescript": "TypeScript",
+    "enabled": "Enabled"
+  }
+}

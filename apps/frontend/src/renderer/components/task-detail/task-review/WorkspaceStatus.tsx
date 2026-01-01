@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   GitBranch,
   FileCode,
@@ -56,6 +57,7 @@ export function WorkspaceStatus({
   onStageOnlyChange,
   onMerge
 }: WorkspaceStatusProps) {
+  const { t } = useTranslation('tasks');
   const { openTerminal, error: terminalError, isOpening } = useTerminalHandler();
   const hasGitConflicts = mergePreview?.gitConflicts?.hasConflicts;
   const hasUncommittedChanges = mergePreview?.uncommittedChanges?.hasChanges;
@@ -78,7 +80,7 @@ export function WorkspaceStatus({
         <div className="flex items-center justify-between mb-3">
           <h3 className="font-medium text-sm text-foreground flex items-center gap-2">
             <GitBranch className="h-4 w-4 text-purple-400" />
-            Build Ready for Review
+            {t('workspaceStatus.buildReady')}
           </h3>
           <div className="flex items-center gap-1">
             <Button
@@ -88,7 +90,7 @@ export function WorkspaceStatus({
               className="h-7 px-2 text-xs"
             >
               <Eye className="h-3.5 w-3.5 mr-1" />
-              View
+              {t('workspaceStatus.view')}
             </Button>
             {worktreeStatus.worktreePath && (
               <Button
@@ -109,11 +111,11 @@ export function WorkspaceStatus({
         <div className="flex items-center gap-4 text-xs">
           <span className="flex items-center gap-1.5 text-muted-foreground">
             <FileCode className="h-3.5 w-3.5" />
-            <span className="font-medium text-foreground">{worktreeStatus.filesChanged || 0}</span> files
+            <span className="font-medium text-foreground">{worktreeStatus.filesChanged || 0}</span> {t('workspaceStatus.files')}
           </span>
           <span className="flex items-center gap-1.5 text-muted-foreground">
             <GitCommit className="h-3.5 w-3.5" />
-            <span className="font-medium text-foreground">{worktreeStatus.commitCount || 0}</span> commits
+            <span className="font-medium text-foreground">{worktreeStatus.commitCount || 0}</span> {t('workspaceStatus.commits')}
           </span>
           <span className="flex items-center gap-1 text-success">
             <Plus className="h-3.5 w-3.5" />
@@ -165,10 +167,10 @@ export function WorkspaceStatus({
             <AlertTriangle className="h-4 w-4 text-warning mt-0.5 flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-warning">
-                {uncommittedCount} uncommitted {uncommittedCount === 1 ? 'change' : 'changes'} in main project
+                {t('workspaceStatus.uncommittedChanges', { count: uncommittedCount })}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Commit or stash them before staging to avoid conflicts.
+                {t('workspaceStatus.uncommittedHint')}
               </p>
               <Button
                 variant="outline"
@@ -183,7 +185,7 @@ export function WorkspaceStatus({
                 disabled={isOpening}
               >
                 <Terminal className="h-3 w-3 mr-1" />
-                {isOpening ? 'Opening...' : 'Open Terminal'}
+                {isOpening ? t('workspaceStatus.opening') : t('workspaceStatus.openTerminal')}
               </Button>
             </div>
           </div>
@@ -193,7 +195,7 @@ export function WorkspaceStatus({
         {isLoadingPreview && !mergePreview && (
           <div className="flex items-center gap-2 text-muted-foreground text-sm py-2">
             <Loader2 className="h-4 w-4 animate-spin" />
-            Checking for conflicts...
+            {t('workspaceStatus.checkingConflicts')}
           </div>
         )}
 
@@ -212,23 +214,23 @@ export function WorkspaceStatus({
                 <>
                   <AlertTriangle className="h-4 w-4 text-warning" />
                   <div>
-                    <span className="text-sm font-medium text-warning">Branch Diverged</span>
-                    <span className="text-xs text-muted-foreground ml-2">AI will resolve</span>
+                    <span className="text-sm font-medium text-warning">{t('workspaceStatus.branchDiverged')}</span>
+                    <span className="text-xs text-muted-foreground ml-2">{t('workspaceStatus.aiWillResolve')}</span>
                   </div>
                 </>
               ) : !hasAIConflicts ? (
                 <>
                   <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm font-medium text-success">Ready to merge</span>
+                  <span className="text-sm font-medium text-success">{t('workspaceStatus.readyToMerge')}</span>
                   <span className="text-xs text-muted-foreground ml-1">
-                    {mergePreview.summary.totalFiles} files
+                    {mergePreview.summary.totalFiles} {t('workspaceStatus.files')}
                   </span>
                 </>
               ) : (
                 <>
                   <AlertTriangle className="h-4 w-4 text-warning" />
                   <span className="text-sm font-medium text-warning">
-                    {mergePreview.conflicts.length} conflict{mergePreview.conflicts.length !== 1 ? 's' : ''}
+                    {t('workspaceStatus.conflictCount', { count: mergePreview.conflicts.length })}
                   </span>
                 </>
               )}
@@ -241,7 +243,7 @@ export function WorkspaceStatus({
                   onClick={() => onShowConflictDialog(true)}
                   className="h-7 text-xs"
                 >
-                  Details
+                  {t('workspaceStatus.details')}
                 </Button>
               )}
               <Button
@@ -250,7 +252,7 @@ export function WorkspaceStatus({
                 onClick={onLoadMergePreview}
                 disabled={isLoadingPreview}
                 className="h-7 px-2"
-                title="Refresh"
+                title={t('workspaceStatus.refresh')}
               >
                 {isLoadingPreview ? (
                   <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -265,10 +267,10 @@ export function WorkspaceStatus({
         {/* Git Conflicts Details */}
         {hasGitConflicts && mergePreview?.gitConflicts && (
           <div className="text-xs text-muted-foreground pl-6">
-            Main branch has {mergePreview.gitConflicts.commitsBehind} new commit{mergePreview.gitConflicts.commitsBehind !== 1 ? 's' : ''}.
+            {t('workspaceStatus.newCommits', { count: mergePreview.gitConflicts.commitsBehind })}
             {mergePreview.gitConflicts.conflictingFiles.length > 0 && (
               <span className="text-warning">
-                {' '}{mergePreview.gitConflicts.conflictingFiles.length} file{mergePreview.gitConflicts.conflictingFiles.length !== 1 ? 's' : ''} need merging.
+                {' '}{t('workspaceStatus.filesNeedMerging', { count: mergePreview.gitConflicts.conflictingFiles.length })}
               </span>
             )}
           </div>
@@ -287,7 +289,7 @@ export function WorkspaceStatus({
           <span className={cn(
             "transition-colors",
             stageOnly ? "text-foreground" : "text-muted-foreground"
-          )}>Stage only (review in IDE before committing)</span>
+          )}>{t('workspaceStatus.stageOnly')}</span>
         </label>
 
         {/* Primary Actions */}
@@ -301,14 +303,14 @@ export function WorkspaceStatus({
             {isMerging ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                {hasGitConflicts ? 'Resolving...' : stageOnly ? 'Staging...' : 'Merging...'}
+                {hasGitConflicts ? t('workspaceStatus.resolving') : stageOnly ? t('workspaceStatus.staging') : t('workspaceStatus.merging')}
               </>
             ) : (
               <>
                 <GitMerge className="mr-2 h-4 w-4" />
                 {hasGitConflicts
-                  ? (stageOnly ? 'Stage with AI Merge' : 'Merge with AI')
-                  : (stageOnly ? 'Stage Changes' : 'Merge to Main')}
+                  ? (stageOnly ? t('workspaceStatus.stageWithAIMerge') : t('workspaceStatus.mergeWithAI'))
+                  : (stageOnly ? t('workspaceStatus.stageChanges') : t('workspaceStatus.mergeToMain'))}
               </>
             )}
           </Button>
@@ -318,7 +320,7 @@ export function WorkspaceStatus({
             onClick={() => onShowDiscardDialog(true)}
             disabled={isMerging || isDiscarding}
             className="text-muted-foreground hover:text-destructive hover:bg-destructive/10 hover:border-destructive/30"
-            title="Discard build"
+            title={t('workspaceStatus.discardBuild')}
           >
             <FolderX className="h-4 w-4" />
           </Button>

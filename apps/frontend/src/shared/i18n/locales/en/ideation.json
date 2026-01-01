@@ -1,0 +1,52 @@
+{
+  "header": {
+    "title": "Ideation",
+    "ideaCount": "{{count}} ideas",
+    "description": "AI-generated feature ideas for your project",
+    "selectedCount": "{{count}} selected",
+    "delete": "Delete",
+    "clearSelection": "Clear selection",
+    "selectAll": "Select all",
+    "showDismissed": "Show dismissed",
+    "hideDismissed": "Hide dismissed",
+    "showArchived": "Show archived",
+    "hideArchived": "Hide archived",
+    "configure": "Configure",
+    "addMore": "Add More",
+    "addMoreTypes": "Add more ideation types",
+    "dismissAll": "Dismiss all ideas",
+    "regenerate": "Regenerate Ideas"
+  },
+  "content": {
+    "noIdeas": "No ideas to display"
+  },
+  "auth": {
+    "title": "Claude Authentication Required",
+    "description": "A Claude Code OAuth token is required to generate AI-powered feature ideas."
+  },
+  "roadmap": {
+    "competitorAnalysis": "Competitor Analysis",
+    "clickToView": "Click to view detailed analysis",
+    "analyzedCompetitors": "Analyzed {{competitors}} competitors with {{painPoints}} pain points identified",
+    "addFeature": "Add Feature",
+    "addFeatureTooltip": "Add a new feature to the roadmap",
+    "regenerate": "Regenerate Roadmap",
+    "target": "Target:",
+    "morePersonas": "+{{count}} more personas",
+    "secondaryPersonas": "Secondary Personas:",
+    "featureCount": "{{count}} features",
+    "phaseCount": "{{count}} phases"
+  },
+  "competitorDialog": {
+    "title": "Competitor Analysis Options",
+    "existingAnalysis": "This project has an existing competitor analysis from {{date}}",
+    "recently": "recently",
+    "useExisting": "Use existing analysis",
+    "recommended": "Recommended",
+    "useExistingDesc": "Reuse the competitor insights you already have. Faster and no additional web searches.",
+    "runNew": "Run new analysis",
+    "runNewDesc": "Perform fresh web searches to get updated competitor information. Takes longer.",
+    "skip": "Skip competitor analysis",
+    "skipDesc": "Generate roadmap without any competitor insights."
+  }
+}

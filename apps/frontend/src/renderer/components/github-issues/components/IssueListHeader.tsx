@@ -1,4 +1,5 @@
 import { Github, RefreshCw, Search, Filter } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Badge } from '../../ui/badge';
 import { Button } from '../../ui/button';
 import { Input } from '../../ui/input';
@@ -21,6 +22,8 @@ export function IssueListHeader({
   onFilterChange,
   onRefresh
 }: IssueListHeaderProps) {
+  const { t } = useTranslation('navigation');
+
   return (
     <div className="shrink-0 p-4 border-b border-border">
       <div className="flex items-center justify-between mb-4">
@@ -30,7 +33,7 @@ export function IssueListHeader({
           </div>
           <div>
             <h2 className="text-lg font-semibold text-foreground">
-              GitHub Issues
+              {t('githubIssuesPage.title')}
             </h2>
             <p className="text-xs text-muted-foreground">
               {repoFullName}
@@ -39,7 +42,7 @@ export function IssueListHeader({
         </div>
         <div className="flex items-center gap-2">
           <Badge variant="outline" className="text-xs">
-            {openIssuesCount} open
+            {t('githubIssuesPage.openCount', { count: openIssuesCount })}
           </Badge>
           <Button
             variant="ghost"
@@ -57,7 +60,7 @@ export function IssueListHeader({
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search issues..."
+            placeholder={t('githubIssuesPage.searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             className="pl-9"
@@ -69,9 +72,9 @@ export function IssueListHeader({
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="open">Open</SelectItem>
-            <SelectItem value="closed">Closed</SelectItem>
-            <SelectItem value="all">All</SelectItem>
+            <SelectItem value="open">{t('githubIssuesPage.filterOpen')}</SelectItem>
+            <SelectItem value="closed">{t('githubIssuesPage.filterClosed')}</SelectItem>
+            <SelectItem value="all">{t('githubIssuesPage.filterAll')}</SelectItem>
           </SelectContent>
         </Select>
       </div>

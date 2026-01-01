@@ -64,5 +64,15 @@
     "auth": "Auth",
     "memory": "Memory",
     "done": "Done"
+  },
+  "ollama": {
+    "checkingModels": "Checking Ollama models...",
+    "notRunning": "Ollama not running",
+    "notRunningDesc": "Start Ollama to use local embedding models. Memory will still work with keyword search.",
+    "retry": "Retry",
+    "installed": "Installed",
+    "downloading": "Downloading...",
+    "download": "Download",
+    "selectModelHint": "Select an installed model for semantic search. Memory works with keyword search even without embeddings."
   }
 }

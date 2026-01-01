@@ -26,5 +26,13 @@
   },
   "messages": {
     "initializeToCreateTasks": "Initialize Auto Claude to create tasks"
+  },
+  "githubIssuesPage": {
+    "title": "GitHub Issues",
+    "openCount": "{{count}} open",
+    "searchPlaceholder": "Search issues...",
+    "filterOpen": "Open",
+    "filterClosed": "Closed",
+    "filterAll": "All"
   }
 }
